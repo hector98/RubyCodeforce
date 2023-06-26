@@ -11,10 +11,5 @@ may, min = 0, 0
 # o minuscula
 word.each_byte { |l| (l > 96)? min += 1 : may += 1 }
 
-if min >= may
-  # imprimimos la palabra en minusculas
-  puts word.downcase
-else
-  # imprimimos la palabra en mayusculas
-  puts word.upcase
-end
+# imprimimos la palabra en mayusculas o minusculas, segun corresponda
+puts (min >= may)? word.downcase : word.upcase
