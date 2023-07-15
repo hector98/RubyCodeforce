@@ -12,8 +12,8 @@ while i < str.length
   p_ll = str[i].ord
 
   if p_ll >= point
-    a = (123-p_ll)+(point-97)
-    b = p_ll - point
+    a = p_ll - point
+    b = (123-p_ll)+(point-97)
   else
     a =  (point - p_ll)
     b = (p_ll - 97) + (123 - point) 
