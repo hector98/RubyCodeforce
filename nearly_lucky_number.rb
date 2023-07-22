@@ -3,21 +3,12 @@
 
 n = gets.chomp # Leemos entrada y guardamos en n
 
-suerte = (n.include?('7') and n.include?('4'))? "YES" : "NO" # declaramos variable suerte y condicionamos su valor
+n_suerte = 0 #cantidad de numeros de la suerte, se inicializa en 0
 
-# Recoremos el string n, y si encontramos un digito que no sea 7 o 4 paramos el ciclo y suerte es NO
-if suerte != "NO"
-  n.each_char do |d|
-    if d != '4'
-      if d != '7'
-        suerte = "NO"
-        break
-      else
-        next
-      end
-    end
-  end
-end
+# Recoremos el string n, dentro ponemos una condicion para cada elemento
+# si el elemento es 4 o 7 aumentamos n_suerte +1
+n.each_char { |e| n_suerte += 1 if e == '4' or e == '7' }
 
-puts suerte # Imprimimos el valor final de suerte
+# Condicionamos la salida
+puts (n_suerte == 4 or n_suerte == 7)? "YES" : "NO"
 
