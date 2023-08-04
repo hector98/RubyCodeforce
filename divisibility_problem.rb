@@ -5,13 +5,8 @@ t = gets.chomp.to_i
 resu = []
 
 t.times do
-  r = 0
   a, b = gets.chomp.split(" ").map(&:to_i)
-  loop do
-    break if a % b == 0
-    r += 1
-    a += 1
-  end
+  r = (a % b == 0)? 0 : b - (a%b)
   resu << r
 end
 
